@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class MainCamera : MonoBehaviour
+public class StartMenu : MonoBehaviour
 {
   GameObject StartMenuCanvas;
   GameObject GameIndexCanvas;
@@ -11,9 +13,15 @@ public class MainCamera : MonoBehaviour
   void Start()
   {
     StartMenuCanvas = GameObject.Find("StartMenuCanvas");
-    GameIndexCanvas = GameObject.Find("GameIndexCanvas");
     StartMenuCanvas.SetActive(true);
-    GameIndexCanvas.SetActive(false);
+    GameObject button = GameObject.Find("button_start");
+    button.GetComponent<Button>().onClick.AddListener(Clicked);
+  }
+
+  public void Clicked()
+  {
+    Debug.Log("clicked") ;
+    SceneManager.LoadScene("Game");
   }
 
   // Update is called once per frame
