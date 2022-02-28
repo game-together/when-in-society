@@ -6,26 +6,45 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-  GameObject StartMenuCanvas;
-  GameObject GameIndexCanvas;
+    GameObject StartMenuCanvas;
+    GameObject GameIndexCanvas;
 
-  // Start is called before the first frame update
-  void Start()
-  {
-    StartMenuCanvas = GameObject.Find("StartMenuCanvas");
-    StartMenuCanvas.SetActive(true);
-    GameObject button = GameObject.Find("button_start");
-    button.GetComponent<Button>().onClick.AddListener(Clicked);
-  }
+        // Start is called before the first frame update
+    void Start()
+    {
+        GameObject.Find("button_start").GetComponent<Button>().onClick.AddListener(StartGame);
+        GameObject.Find("button_memory").GetComponent<Button>().onClick.AddListener(OpenMemory);
+        GameObject.Find("button_setting").GetComponent<Button>().onClick.AddListener(OpenSetting);
+        GameObject.Find("button_about").GetComponent<Button>().onClick.AddListener(OpenAbout);
+        GameObject.Find("button_exit").GetComponent<Button>().onClick.AddListener(ExitMenu);
+    }
 
-  public void Clicked()
-  {
-    Debug.Log("clicked") ;
-    SceneManager.LoadScene("Game");
-  }
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Game");
+    }
 
-  // Update is called once per frame
-  void Update()
-  {
-  }
+    public void OpenMemory()
+    {
+        Debug.Log("should open memory");
+    }
+
+    public void OpenSetting() 
+    {
+    }
+
+    public void OpenAbout()
+    {
+
+    }
+
+    public void ExitMenu()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
 }

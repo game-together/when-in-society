@@ -6,6 +6,7 @@ public class MissionMenu : MonoBehaviour
 {
     public static bool showMission = false;
     public GameObject missionMenuUI;
+    public GameObject missionMenuUI2;
     public int missionID;
     public Text Intro;
     GameObject missionSelected;
@@ -26,7 +27,7 @@ public class MissionMenu : MonoBehaviour
         }
     }
 
-    void Open()
+    public void Open()
     {
         missionMenuUI.SetActive(true);
         showMission = true;
